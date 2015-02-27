@@ -25,7 +25,6 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
 
 dependencies {
     repositories {
@@ -34,15 +33,14 @@ dependencies {
 }
 
 android {
-    compileSdkVersion Integer.parseInt(COMPILE_SDK)
-    buildToolsVersion BUILD_TOOLS_VERSION
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
-        versionName VERSION_NAME
-        versionCode Integer.parseInt(VERSION_CODE)
-        targetSdkVersion Integer.parseInt(TARGET_SDK)
-        minSdkVersion Integer.parseInt(MIN_SDK_LIBRARY)
+        versionName "5.1.1-SNAPSHOT"
+        versionCode 50102
+        targetSdkVersion 21
+        minSdkVersion 15
     }
 }
 
-apply from: 'gradle-mvn-push.gradle'

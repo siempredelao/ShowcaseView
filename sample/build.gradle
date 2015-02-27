@@ -36,19 +36,18 @@ apply plugin: 'com.android.application'
 dependencies {
     compile project(':library')
     compile 'com.android.support:support-v4:21.0.3'
-    compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.android.support:appcompat-v7:21.0.3'
 }
 
 android {
-    compileSdkVersion Integer.parseInt(COMPILE_SDK)
-    buildToolsVersion BUILD_TOOLS_VERSION
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
-        versionName VERSION_NAME
-        versionCode Integer.parseInt(VERSION_CODE)
-        targetSdkVersion Integer.parseInt(TARGET_SDK)
-        minSdkVersion Integer.parseInt(MIN_SDK_SAMPLE)
+        versionName "5.1.1-SNAPSHOT"
+        versionCode 50102
+        targetSdkVersion 21
+        minSdkVersion 15
     }
 
     lintOptions {
