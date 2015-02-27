@@ -126,7 +126,7 @@ public class SampleActivity extends Activity implements View.OnClickListener,
         switch (position) {
 
             case 0:
-                //startActivity(new Intent(this, ActionItemsSampleActivity.class));
+                startActivity(new Intent(this, CustomTestActivity.class));
                 break;
 
             case 1:
@@ -146,13 +146,13 @@ public class SampleActivity extends Activity implements View.OnClickListener,
     private static class HardcodedListAdapter extends ArrayAdapter {
 
         private static final int[] TITLE_RES_IDS = new int[] {
-                R.string.title_action_items,
+                R.string.title_custom_test,
                 R.string.title_animations,
                 R.string.title_single_shot//, R.string.title_memory
         };
 
         private static final int[] SUMMARY_RES_IDS = new int[] {
-                R.string.sum_action_items,
+                R.string.sum_custom_test,
                 R.string.sum_animations,
                 R.string.sum_single_shot//, R.string.sum_memory
         };
