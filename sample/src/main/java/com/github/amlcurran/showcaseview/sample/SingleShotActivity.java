@@ -36,6 +36,7 @@ public class SingleShotActivity extends Activity {
                 .setContentTitle(R.string.title_single_shot)
                 .setContentText(R.string.R_string_desc_single_shot)
                 .singleShot(42)
+                .doNotBlockAllTouches()
                 .build();
     }
 }

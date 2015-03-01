@@ -61,6 +61,7 @@ public class ShowcaseView extends RelativeLayout
 
     // Touch items
     private boolean hasCustomClickListener = false;
+    private boolean blockAllTouches = true;
     private boolean blockTouches = true;
     private boolean hideOnTouch = false;
     private OnShowcaseEventListener mEventListener = OnShowcaseEventListener.NONE;
@@ -328,6 +329,10 @@ public class ShowcaseView extends RelativeLayout
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
 
+        if (blockAllTouches) {
+            return true;
+        }
+
         float xDelta = Math.abs(motionEvent.getRawX() - showcaseX);
         float yDelta = Math.abs(motionEvent.getRawY() - showcaseY);
         double distanceFromFocus = Math.sqrt(Math.pow(xDelta, 2) + Math.pow(yDelta, 2));
@@ -477,6 +482,17 @@ public class ShowcaseView extends RelativeLayout
         }
 
         /**
+         * Don't make the ShowcaseView block all touches on itself. This doesn't
+         * block touches in the showcased area.
+         * <p/>
+         * By default, the ShowcaseView does block all touches.
+         */
+        public Builder doNotBlockAllTouches() {
+            showcaseView.setBlockAllTouches(false);
+            return this;
+        }
+
+        /**
          * Make this ShowcaseView hide when the user touches outside the showcased area.
          * This enables {@link #doNotBlockTouches()} as well.
          * <p/>
@@ -554,6 +570,10 @@ public class ShowcaseView extends RelativeLayout
     @Override
     public void setBlocksTouches(boolean blockTouches) {
         this.blockTouches = blockTouches;
+    }
+
+    public void setBlockAllTouches(boolean blockAllTouches) {
+        this.blockAllTouches = blockAllTouches;
     }
 
     /**
