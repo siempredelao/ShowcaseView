@@ -82,12 +82,11 @@ public class ShowcaseView extends RelativeLayout
     protected ShowcaseView(Context context, AttributeSet attrs, int defStyle, boolean newStyle) {
         super(context, attrs, defStyle);
 
-        ApiUtils apiUtils = new ApiUtils();
         animationFactory = new AnimatorAnimationFactory();
         showcaseAreaCalculator = new ShowcaseAreaCalculator();
         shotStateStore = new ShotStateStore(context);
 
-        apiUtils.setFitsSystemWindowsCompat(this);
+        this.setFitsSystemWindows(true);
         getViewTreeObserver().addOnPreDrawListener(new CalculateTextOnPreDraw());
         getViewTreeObserver().addOnGlobalLayoutListener(new UpdateOnGlobalLayout());
 

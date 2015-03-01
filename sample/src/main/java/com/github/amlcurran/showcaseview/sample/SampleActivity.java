@@ -32,7 +32,6 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.github.amlcurran.showcaseview.ApiUtils;
 import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.sample.animations.AnimationSampleActivity;
@@ -46,8 +45,6 @@ public class SampleActivity extends Activity implements View.OnClickListener,
     ShowcaseView sv;
     Button buttonBlocked;
     ListView listView;
-
-    private final ApiUtils apiUtils = new ApiUtils();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,9 +78,7 @@ public class SampleActivity extends Activity implements View.OnClickListener,
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void dimView(View view) {
-        if (apiUtils.isCompatWithHoneycomb()) {
-            view.setAlpha(ALPHA_DIM_VALUE);
-        }
+        view.setAlpha(ALPHA_DIM_VALUE);
     }
 
     @Override
@@ -103,9 +98,7 @@ public class SampleActivity extends Activity implements View.OnClickListener,
 
     @Override
     public void onShowcaseViewHide(ShowcaseView showcaseView) {
-        if (apiUtils.isCompatWithHoneycomb()) {
-            listView.setAlpha(1f);
-        }
+        listView.setAlpha(1f);
         buttonBlocked.setText(R.string.button_show);
         //buttonBlocked.setEnabled(false);
     }
