@@ -14,23 +14,7 @@
  * limitations under the License.
  */
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.1.0'
-    }
-}
-
 apply plugin: 'com.android.library'
-
-dependencies {
-    repositories {
-        mavenCentral()
-    }
-}
 
 android {
     compileSdkVersion 21
