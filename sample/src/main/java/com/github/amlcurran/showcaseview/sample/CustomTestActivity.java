@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
 
-
 public class CustomTestActivity extends Activity {
 
     @Override
@@ -32,7 +31,7 @@ public class CustomTestActivity extends Activity {
                 .setContentTitle("Titulo")
                 .setContentText("Contenido")
                 .setStyle(R.style.CustomShowcaseTheme2)
-                .build();
+                .buildAfterDelay(1000);
     }
 
 

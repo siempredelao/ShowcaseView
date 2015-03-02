@@ -24,6 +24,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -412,6 +413,17 @@ public class ShowcaseView extends RelativeLayout
          */
         public ShowcaseView build() {
             insertShowcaseView(showcaseView, activity);
+            return showcaseView;
+        }
+
+        public ShowcaseView buildAfterDelay(final int milliseconds) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    insertShowcaseView(showcaseView, activity);
+                }
+            }, milliseconds);
+
             return showcaseView;
         }
 
