@@ -33,6 +33,7 @@ public class CustomTestActivity extends Activity {
                 .setStyle(R.style.CustomShowcaseTheme2)
                 .withInnerCircleRadius(100f)
                 .withOuterCircleRadius(300f)
+                .setButtonText("Go for it!")
                 .buildAfterDelay(1000);
     }
 
