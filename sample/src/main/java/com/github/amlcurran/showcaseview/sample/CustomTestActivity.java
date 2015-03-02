@@ -31,6 +31,8 @@ public class CustomTestActivity extends Activity {
                 .setContentTitle("Titulo")
                 .setContentText("Contenido")
                 .setStyle(R.style.CustomShowcaseTheme2)
+                .withInnerCircleRadius(100f)
+                .withOuterCircleRadius(300f)
                 .buildAfterDelay(1000);
     }
 

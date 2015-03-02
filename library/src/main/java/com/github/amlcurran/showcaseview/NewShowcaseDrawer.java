@@ -26,8 +26,8 @@ import android.graphics.Canvas;
 class NewShowcaseDrawer extends StandardShowcaseDrawer {
 
     private static final int ALPHA_60_PERCENT = 153;
-    private final float outerRadius;
-    private final float innerRadius;
+    private float outerRadius;
+    private float innerRadius;
 
     public NewShowcaseDrawer(Resources resources) {
         super(resources);
@@ -67,5 +67,15 @@ class NewShowcaseDrawer extends StandardShowcaseDrawer {
     @Override
     public void setBackgroundColour(int backgroundColor) {
         this.backgroundColour = backgroundColor;
+    }
+
+    @Override
+    public void setInnerCircleRadius(float innerRadius) {
+        this.innerRadius = innerRadius;
+    }
+
+    @Override
+    public void setOuterCircleRadius(float outerRadius) {
+        this.outerRadius = outerRadius;
     }
 }

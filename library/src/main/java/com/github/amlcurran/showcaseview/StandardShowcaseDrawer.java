@@ -89,6 +89,16 @@ class StandardShowcaseDrawer implements ShowcaseDrawer {
     }
 
     @Override
+    public void setInnerCircleRadius(float innerRadius) {
+        // nothing
+    }
+
+    @Override
+    public void setOuterCircleRadius(float outerRadius) {
+        // nothing
+    }
+
+    @Override
     public void drawToCanvas(Canvas canvas, Bitmap bitmapBuffer) {
         canvas.drawBitmap(bitmapBuffer, 0, 0, basicPaint);
     }

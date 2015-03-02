@@ -535,6 +535,16 @@ public class ShowcaseView extends RelativeLayout
             showcaseView.setOnShowcaseEventListener(showcaseEventListener);
             return this;
         }
+        
+        public Builder withInnerCircleRadius(float innerRadius) {
+            showcaseView.setInnerCircleRadius(innerRadius);
+            return this;
+        }
+
+        public Builder withOuterCircleRadius(float outerRadius) {
+            showcaseView.setOuterCircleRadius(outerRadius);
+            return this;
+        }
     }
 
     /**
@@ -604,6 +614,16 @@ public class ShowcaseView extends RelativeLayout
     @Override
     public boolean isShowing() {
         return isShowing;
+    }
+
+    @Override
+    public void setInnerCircleRadius(float innerRadius) {
+        showcaseDrawer.setInnerCircleRadius(innerRadius);
+    }
+
+    @Override
+    public void setOuterCircleRadius(float outerRadius) {
+        showcaseDrawer.setOuterCircleRadius(outerRadius);
     }
 
     private void updateStyle(TypedArray styled, boolean invalidate) {
